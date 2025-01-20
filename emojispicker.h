@@ -1,0 +1,148 @@
+#ifndef EMOJISPICKER_H
+#define EMOJISPICKER_H
+
+#include <QDialog>
+
+const std::map<std::string, std::string> emojiNames = {
+    {"angry_face", "злой смайлик"},
+    {"angry_face_with_horns", "злой смайлик с рожками"},
+    {"anguished_face", "страдающий смайлик"},
+    {"anxious_face_with_sweat", "волнующийся смайлик с потом"},
+    {"astonished_face", "удивленный смайлик"},
+    {"beaming_face_with_smiling_eyes", "сияющий смайлик с улыбающимися глазами"},
+    {"cat_face", "смайлик кота"},
+    {"clown_face", "смайлик клоуна"},
+    {"cold_face", "холодный смайлик"},
+    {"confounded_face", "озадаченный смайлик"},
+    {"confused_face", "смущенный смайлик"},
+    {"cow_face", "смайлик коровы"},
+    {"cowboy_hat_face", "смайлик в ковбойской шляпе"},
+    {"crying_face", "плачущий смайлик"},
+    {"disappointed_face", "разочарованный смайлик"},
+    {"disguised_face", "маскированный смайлик"},
+    {"dog_face", "смайлик собаки"},
+    {"dotted_line_face", "смайлик с точечной линией"},
+    {"downcast_face_with_sweat", "опустившийся смайлик с потом"},
+    {"dragon_face", "смайлик дракона"},
+    {"drooling_face", "слюнявящий смайлик"},
+    {"expressionless_face", "бесстрастный смайлик"},
+    {"face_blowing_a_kiss", "смайлик, посылающий воздушный поцелуй"},
+    {"face_exhaling", "смайлик, выдыхающий"},
+    {"face_holding_back_tears", "смайлик, сдерживающий слезы"},
+    {"face_in_clouds", "смайлик в облаках"},
+    {"face_savoring_food", "смайлик, наслаждающийся едой"},
+    {"face_screaming_in_fear", "кричащий смайлик от страха"},
+    {"face_vomiting", "рвущийся смайлик"},
+    {"face_with_diagonal_mouth", "смайлик с диагональным ртом"},
+    {"face_with_hand_over_mouth", "смайлик с рукой на рту"},
+    {"face_with_head-bandage", "смайлик с повязкой на голове"},
+    {"face_with_medical_mask", "смайлик в медицинской маске"},
+    {"face_with_monocle", "смайлик с моноклем"},
+    {"face_with_open_eyes_and_hand_over_mouth", "смайлик с открытыми глазами и рукой на рту"},
+    {"face_with_open_mouth", "смайлик с открытым ртом"},
+    {"face_with_peeking_eye", "смайлик с выглядывающим глазом"},
+    {"face_with_raised_eyebrow", "смайлик с поднятой бровью"},
+    {"face_with_rolling_eyes", "смайлик, крутящий глазами"},
+    {"face_with_spiral_eyes", "смайлик с спиральными глазами"},
+    {"face_with_steam_from_nose", "смайлик с паром из носа"},
+    {"face_with_symbols_on_mouth", "смайлик с символами на рте"},
+    {"face_with_tears_of_joy", "смайлик со слезами радости"},
+    {"face_with_thermometer", "смайлик с термометром"},
+    {"face_with_tongue", "смайлик с языком"},
+    {"face_without_mouth", "смайлик без рта"},
+    {"fearful_face", "испуганный смайлик"},
+    {"first_quarter_moon_face", "смайлик первой четверти луны"},
+    {"flushed_face", "покрасневший смайлик"},
+    {"frowning_face", "смайлик с нахмуренным лбом"},
+    {"frowning_face_with_open_mouth", "смайлик с нахмуренным лбом и открытым ртом"},
+    {"full_moon_face", "смайлик полной луны"},
+    {"grimacing_face", "скривившийся смайлик"},
+    {"grinning_face", "ухмыляющийся смайлик"},
+    {"grinning_face_with_big_eyes", "ухмыляющийся смайлик с большими глазами"},
+    {"grinning_face_with_smiling_eyes", "ухмыляющийся смайлик с улыбающимися глазами"},
+    {"grinning_face_with_sweat", "ухмыляющийся смайлик с потом"},
+    {"grinning_squinting_face", "ухмыляющийся смайлик с прищуренными глазами"},
+    {"horse_face", "смайлик лошади"},
+    {"hot_face", "горячий смайлик"},
+    {"hugging_face", "смайлик обнимающий"},
+    {"hushed_face", "молчащий смайлик"},
+    {"kissing_face", "целующийся смайлик"},
+    {"kissing_face_with_closed_eyes", "целующийся смайлик с закрытыми глазами"},
+    {"kissing_face_with_smiling_eyes", "целующийся смайлик с улыбающимися глазами"},
+    {"knocked-out_face", "выбитый смайлик"},
+    {"loudly_crying_face", "громко плачущий смайлик"},
+    {"lying_face", "лживый смайлик"},
+    // {"man_facepalming_light", "смайлик мужчины, держащего руку на лице"},
+    {"melting_face", "таящий смайлик"},
+    {"money-mouth_face", "смайлик с монетами во рту"},
+    {"monkey_face", "смайлик обезьяны"},
+    {"mouse_face", "смайлик мыши"},
+    {"nauseated_face", "тошнотворный смайлик"},
+    {"nerd_face", "смайлик ботаника"},
+    {"neutral_face", "нейтральный смайлик"},
+    {"new_moon_face", "смайлик новой луны"},
+    {"partying_face", "веселый смайлик"},
+    {"pensive_face", "задумчивый смайлик"},
+    {"persevering_face", "настойчивый смайлик"},
+    // {"person_facepalming_light", "смайлик человека, держащего руку на лице"},
+    {"pig_face", "смайлик свиньи"},
+    {"pleading_face", "умоляющий смайлик"},
+    {"pouting_face", "хныкающий смайлик"},
+    {"rabbit_face", "смайлик кролика"},
+    {"relieved_face", "облегченный смайлик"},
+    {"sad_but_relieved_face", "грустный, но облегченный смайлик"},
+    {"saluting_face", "смайлик, поклоняющийся"},
+    {"shushing_face", "смайлик, прикрывающий рот"},
+    {"sleeping_face", "спящий смайлик"},
+    {"sleepy_face", "сонный смайлик"},
+    {"slightly_frowning_face", "слегка нахмуренный смайлик"},
+    {"slightly_smiling_face", "слегка улыбающийся смайлик"},
+    {"smiling_face", "улыбающийся смайлик"},
+    {"smiling_face_with_halo", "улыбающийся смайлик с ореолом"},
+    {"smiling_face_with_heart-eyes", "улыбающийся смайлик с глазами в форме сердца"},
+    {"smiling_face_with_hearts", "улыбающийся смайлик с сердечками"},
+    {"smiling_face_with_horns", "улыбающийся смайлик с рожками"},
+    {"smiling_face_with_smiling_eyes", "улыбающийся смайлик с улыбающимися глазами"},
+    {"smiling_face_with_sunglasses", "улыбающийся смайлик в солнечных очках"},
+    {"smiling_face_with_tear", "улыбающийся смайлик со слезой"},
+    {"smirking_face", "хитроулыбающийся смайлик"},
+    {"sneezing_face", "чихающий смайлик"},
+    {"squinting_face_with_tongue", "морщащийся смайлик с языком"},
+    {"sun_with_face", "смайлик солнца"},
+    {"thinking_face", "думающий смайлик"},
+    {"tiger_face", "смайлик тигра"},
+    {"tired_face", "уставший смайлик"},
+    {"unamused_face", "не впечатленный смайлик"},
+    {"upside-down_face", "смайлик вверх ногами"},
+    {"weary_face", "усталый смайлик"},
+    {"wind_face", "смайлик ветра"},
+    {"winking_face", "подмигивающий смайлик"},
+    {"winking_face_with_tongue", "подмигивающий смайлик с языком"},
+    // {"woman_facepalming_light", "смайлик женщины, держащей руку на лице"},
+    {"woozy_face", "головокружительный смайлик"},
+    {"worried_face", "взволнованный смайлик"},
+    {"yawning_face", "зевающий смайлик"},
+    {"zany_face", "шаловливый смайлик"},
+    {"zipper-mouth_face", "смайлик с застегнутым ртом"},
+};
+
+namespace Ui {
+class emojisPicker;
+}
+
+class emojisPicker : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit emojisPicker(QWidget *parent = nullptr, const QString& windowTitle = "MrChat. Выбор эмодзи");
+    ~emojisPicker();
+
+signals:
+    void emojiPicked(const QString& emojiName);
+
+private:
+    Ui::emojisPicker *ui;
+};
+
+#endif // EMOJISPICKER_H

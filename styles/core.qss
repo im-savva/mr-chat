@@ -1,0 +1,418 @@
+#accountChoicesList {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+#accountChoicesList::item {
+    background: rgb(255,255,255);
+    border-radius: 15px;
+    border: 1px solid rgb(209,209,214);
+    outline: none;
+    color: rgb(0,0,0);
+}
+
+#accountChoicesList::item #title {
+    color: rgb(0,0,0);
+}
+
+#accountChoicesList::item #description {
+    color: rgba(0,0,0,0.5);
+}
+
+#accountChoicesList::item:hover {
+    background: rgba(0,122,255,0.05);
+    border: 1px solid rgb(0,122,255);
+}
+
+#emojiPickerButton {
+    background: rgb(255,255,255);
+    border-radius: 15px;
+    border: 1px solid rgba(209,209,214,0);
+    outline: none;
+}
+
+#emojiPickerButton:hover {
+    background: rgba(0,122,255,0.05);
+    border: 1px solid rgb(0,122,255);
+}
+
+#addAccount,
+#logInAccount,
+#addChat,
+#addchatprogress,
+#addChatRequest,
+#accountSettings,
+#removeChatApproval,
+#emojisPicker {
+    background: rgb(255,255,255);
+}
+
+#stickerMessageBox {
+    background: red;
+}
+
+#emojisScrollContainer,
+#emojisContainer {
+    background: rgba(0, 0, 0, 0);
+}
+
+#addChatRequest QProgressBar {
+    border-top: 1px solid rgb(209,209,214);
+    background-color: rgb(255,255,255);
+}
+
+#addChatRequest QProgressBar::chunk {
+    /*background-color: rgb(0,122,255);*/
+}
+
+#addchatprogress QProgressBar {
+    border: 1px solid rgb(209,209,214);
+    background-color: rgb(255,255,255);
+}
+
+#addchatprogress QProgressBar::chunk {
+    /*background-color: rgb(0,122,255);*/
+}
+
+QProgressBar::chunk:first {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+QProgressBar::chunk:last {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#addChat #connectionAdressInput,
+#addChat #nicknameInput,
+#addAccount #passwordInput,
+#addAccount #portInput,
+#logInAccount #passwordInput,
+#addAccount #nicknameInput,
+#accountSettings #portInput,
+#accountSettings #nicknameInput,
+#chatSettings #nicknameInput,
+#chatSettings #addressInput {
+    border: 1px solid rgb(209,209,214);
+    border-bottom: 2px solid rgb(209,209,214);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    background: rgb(255,255,255);
+    color: rgb(0,0,0);
+}
+
+#addChat #connectionAdressInput::placeholder,
+#addChat #nicknameInput::placeholder,
+#addAccount #passwordInput::placeholder,
+#addAccount #portInput::placeholder,
+#logInAccount #passwordInput::placeholder,
+#addAccount #nicknameInput::placeholder,
+#accountSettings #portInput::placeholder,
+#accountSettings #nicknameInput::placeholder,
+QLineEdit::placeholder,
+#chatSettings #nicknameInput::placeholder,
+#chatSettings #addressInput::placeholder {
+    color: rgba(0,0,0,0.5);
+}
+
+#addChat #connectionAdressInput:focus,
+#addChat #nicknameInput:focus,
+#addAccount #passwordInput:focus,
+#addAccount #portInput:focus,
+#logInAccount #passwordInput:focus,
+#addAccount #nicknameInput:focus,
+#accountSettings #portInput:focus,
+#accountSettings #nicknameInput:focus,
+#chatSettings #nicknameInput:focus,
+#chatSettings #addressInput:focus {
+    border-bottom: 2px solid rgb(0,122,255);
+}
+
+#addAccount #cancelButton,
+#addChat #cancelButton,
+#logInAccount #cancelButton,
+#chatSettings #changeIconButton,
+#accountSettings #logoutButton,
+#accountSettings #changeIconButton,
+#chatSettings #banChatButton {
+    padding: 8px 16px;
+    border: 1px solid rgb(209,209,214);
+    background: rgb(255,255,255);
+    border-radius: 10px;
+    color: rgb(0,0,0);
+}
+
+#addAccount #cancelButton:hover,
+#addChat #cancelButton:hover,
+#logInAccount #cancelButton:hover,
+#accountSettings #logoutButton:hover,
+#chatSettings #changeIconButton:hover,
+#accountSettings #changeIconButton:hover,
+#chatSettings #banChatButton:hover {
+    background: rgb(229,229,234);
+}
+
+#addAccount #continueButton,
+#addChat #continueButton,
+#logInAccount #continueButton,
+#addChatRequest #continueButton,
+#accountSettings #saveButton,
+#removeChatApproval #cancelButton,
+#removeAccountApproval #cancelButton,
+#chatSettings #saveButton {
+    padding: 8px 16px;
+    border: none;
+    background: rgb(0,122,255);
+    color: rgb(255,255,255);
+    border-radius: 10px;
+}
+
+#addAccount #continueButton:disabled,
+#addChat #continueButton:disabled,
+#logInAccount #continueButton:disabled,
+#addChatRequest #continueButton:disabled,
+#accountSettings #saveButton:disabled,
+#removeChatApproval #cancelButton:disabled,
+#removeAccountApproval #cancelButton:disabled,
+#chatSettings #saveButton:disabled {
+    background: rgba(0,122,255,0.25);
+}
+
+#addAccount #continueButton:hover,
+#addChat #continueButton:hover,
+#logInAccount #continueButton:hover,
+#addChatRequest #continueButton:hover,
+#accountSettings #saveButton:hover,
+#removeChatApproval #cancelButton:hover,
+#removeAccountApproval #cancelButton:hover,
+#chatSettings #saveButton:hover {
+    background: rgba(0,122,255,0.85);
+}
+
+#addChatRequest #banButton,
+#chatSettings #removeChatButton,
+#removeChatApproval #removeButton,
+#removeAccountApproval #removeButton,
+#accountSettings #removeAccountButton {
+    padding: 8px 16px;
+    border: 1px solid rgb(255,59,48);
+    background: rgb(255,255,255);
+    color: rgb(255,59,48);
+    border-radius: 10px;
+}
+
+#addChatRequest #banButton:hover,
+#chatSettings #removeChatButton:hover,
+#removeChatApproval #removeButton:hover,
+#removeAccountApproval #removeButton:hover,
+#accountSettings #removeAccountButton:hover {
+    background: rgba(255,59,48,0.15);
+}
+
+#MainWindow {
+    background: rgb(255,255,255);
+}
+
+#MainWindow #settingsButton,
+#MainWindow #detailsButton,
+#MainWindow #searchButton,
+#MainWindow #faqButton {
+    border: none;
+    background: rgb(255,255,255);
+    border-radius: 17px;
+    padding: 2px;
+}
+
+#MainWindow #settingsButton:hover,
+#MainWindow #detailsButton:hover,
+#MainWindow #searchButton:hover,
+#MainWindow #faqButton:hover {
+    background: rgb(229,229,234);
+}
+
+#MainWindow #sideBarSearch {
+    border: 1px solid rgb(209,209,214);
+    border-bottom: 2px solid rgb(209,209,214);
+    padding: 6px 8px;
+    border-radius: 10px;
+    background: rgb(255,255,255);
+    color: rgb(0,0,0);
+}
+
+#MainWindow #sideBarSearch:focus {
+    border-bottom: 2px solid rgb(0,122,255);
+}
+
+#MainWindow #spaceSeparatorBottom,
+#MainWindow #spaceSeparatorTop {
+    border: none;
+    background-color: rgba(209,209,214,0.5);
+    width: 1px;
+    min-width: 1px;
+    max-width: 1px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#MainWindow #messageListContainer {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+#MainWindow #messageListWrapper {
+    border: none;
+    background: transparent;
+}
+
+#messageListAndBottomBarContainer {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 rgb(99, 168, 238), stop: 1 rgb(109, 136, 238));
+}
+
+#MainWindow #sendVoiceButton,
+#MainWindow #sendStickerButton,
+#MainWindow #sendMessageButton,
+#MainWindow #sendFileButton{
+    border: none;
+    background: rgb(255,255,255);
+    border-radius: 11px;
+    padding: 2px;
+}
+
+#MainWindow #sendVoiceButton:disabled,
+#MainWindow #sendStickerButton:disabled,
+#MainWindow #sendMessageButton:disabled,
+#MainWindow #sendFileButton:disabled {
+    background: rgba(0,0,0,0.05);
+}
+
+#MainWindow #messageInput:disabled {
+    color: rgba(0,0,0,0.5);
+}
+
+#MainWindow #sendVoiceButton:hover,
+#MainWindow #sendStickerButton:hover,
+#MainWindow #sendMessageButton:hover,
+#MainWindow #sendFileButton:hover{
+    background: rgb(229,229,234);
+}
+
+#chatBottomBar {
+    background: rgb(255,255,255);
+    border-radius: 15px;
+}
+
+#MainWindow #messageFromMe #messageBox {
+    background: rgb(236,246,210);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 16px;
+    padding: 10px;
+}
+
+#MainWindow #messageFromCompanion #messageBox {
+    background: rgb(255,255,255);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 4px;
+    padding: 10px;
+}
+
+#MainWindow #messageTimestamp #messageBox {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin: 0;
+    max-height: 18px;
+}
+
+#MainWindow #messageText {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0);
+}
+
+#MainWindow #messageTimestamp #messageText {
+    color: rgb(255,255,255);
+    margin: 0;
+    padding: 0;
+}
+
+#MainWindow #messageBox #messageTime,
+#MainWindow #messageBox #fileSize {
+    color: rgba(0,0,0,0.5);
+}
+
+#MainWindow #messageInput {
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: rgb(0,0,0);
+}
+
+#MainWindow #chatDescription {
+    color: rgba(0,0,0,0.5);
+}
+
+#MainWindow #chatCardsContainer,
+#MainWindow #chatCardsWrapper {
+    background: rgb(255,255,255);
+    border: none;
+}
+
+#MainWindow #chatCard #chatIconContainer {
+    background: rgb(255,255,255);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#accountChoicesList::item #chatIconContainer {
+    background: rgba(255,255,255,0);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#MainWindow #chatCard #onlineIndicator {
+    background: rgb(0,122,255);
+    border-radius: 5px;
+    border: 2px solid rgb(255,255,255);
+}
+
+QScrollBar {
+    background: transparent;
+    width: 8px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 2px;
+    width: 4px;
+    margin: 0 2px;
+    min-height: 50px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::up-arrow:vertical,
+QScrollBar::down-arrow:vertical {
+    background: transparent;
+}
+
+#fileIcon {
+    background: red;
+    background: rgb(0,122,255);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+}
